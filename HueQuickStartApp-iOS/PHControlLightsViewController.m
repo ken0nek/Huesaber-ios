@@ -14,6 +14,8 @@
 @interface PHControlLightsViewController()
 {
     NSArray *hueArray;
+    NSArray *huebrightArray;
+    NSNumber *curbright;
     NSNumber     *curColor;
     CMMotionManager *motionManager;
 }
@@ -54,7 +56,9 @@
     
     // Red, Blue, Green, Purple
     hueArray = @[[NSNumber numberWithInt:0], [NSNumber numberWithInt:43690], [NSNumber numberWithInt:24845], [NSNumber numberWithInt:54613]];
-    curColor = hueArray[0];
+    huebrightArray = @[[NSNumber numberWithInt:50], [NSNumber numberWithInt:100] ,[NSNumber numberWithInt:150]];
+    curbright = huebrightArray[0];
+    curColor = hueArray[1];
     
 }
 
@@ -75,15 +79,18 @@
                                             accv = sqrt(accv);
                                             if (accv > 1.1 && accv <= 1.8) {
                                                 [[SEManager sharedManager] playSound:@"SlowSabr.wav"];
+                                                curbright = huebrightArray[0];
                                                 [self ColoursOfConnectLights];
                                             }
-                                            if (accv > 1.8) {
+                                            if (accv > 1.8 && accv <= 2.5) {
                                                 [[SEManager sharedManager] playSound:@"Swing02.wav"];
+                                                 curbright = huebrightArray[1];
                                                 [self ColoursOfConnectLights];
                                             }
                                             else if (accv > 2.5){
                                                 [[SEManager sharedManager] playSound:@"LSwall02.WAV"];
                                                 [self black_Lights];
+                                                 curbright = huebrightArray[2];
                                                 [self ColoursOfConnectLights];
                                                 
                                             }
@@ -223,7 +230,7 @@
         int n = random() % [hueArray count];
         
         [lightState setHue:curColor];
-        [lightState setBrightness:[NSNumber numberWithInt:120]];
+        [lightState setBrightness:curbright];
         [lightState setSaturation:[NSNumber numberWithInt:254]];
         
         // Send lightstate to light

@@ -41,7 +41,7 @@ static SEManager *sharedData_ = nil;
     player.volume = _soundVolume;
     player.delegate = (id)self;
     [soundArray insertObject:player atIndex:0];
-    [player prepareToPlay]; 
+    [player prepareToPlay];
     [player play];
 }
 
@@ -53,6 +53,7 @@ static SEManager *sharedData_ = nil;
     [player setNumberOfLoops:0];
     player.volume = _soundVolume;
     player.delegate = (id)self;
+    player.rate = rate;
     [soundArray insertObject:player atIndex:0];
     [player prepareToPlay];
     [player play];
