@@ -41,6 +41,19 @@ static SEManager *sharedData_ = nil;
     player.volume = _soundVolume;
     player.delegate = (id)self;
     [soundArray insertObject:player atIndex:0];
+    [player prepareToPlay]; 
+    [player play];
+}
+
+- (void)playSound:(NSString *)soundName rate:(double)rate {
+    NSString *soundPath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:soundName];
+    NSURL *urlOfSound = [NSURL fileURLWithPath:soundPath];
+    
+    AVAudioPlayer* player = [[AVAudioPlayer alloc] initWithContentsOfURL:urlOfSound error:nil];
+    [player setNumberOfLoops:0];
+    player.volume = _soundVolume;
+    player.delegate = (id)self;
+    [soundArray insertObject:player atIndex:0];
     [player prepareToPlay];
     [player play];
 }

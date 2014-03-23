@@ -53,7 +53,7 @@
     [self noLocalConnection];
     
     // Red, Blue, Green, Purple
-    hueArray = @[[NSNumber numberWithInt:0], [NSNumber numberWithInt:43690], [NSNumber numberWithInt:21845], [NSNumber numberWithInt:54613]];
+    hueArray = @[[NSNumber numberWithInt:0], [NSNumber numberWithInt:43690], [NSNumber numberWithInt:24845], [NSNumber numberWithInt:54613]];
     curColor = hueArray[0];
     
 }
@@ -73,12 +73,18 @@
                                             CMAcceleration acceleration = accelerometerData.acceleration;
                                             double accv = acceleration.x*acceleration.x + acceleration.y *acceleration.y + acceleration.z*acceleration.z;
                                             accv = sqrt(accv);
-                                            if (accv > 2.0) {
+                                            if (accv > 1.1 && accv <= 1.8) {
+                                                [[SEManager sharedManager] playSound:@"SlowSabr.wav"];
+                                                [self ColoursOfConnectLights];
+                                            }
+                                            if (accv > 1.8) {
                                                 [[SEManager sharedManager] playSound:@"Swing02.wav"];
                                                 [self ColoursOfConnectLights];
                                             }
-                                            else if (accv > 3.0){
-                                                 [[SEManager sharedManager] playSound:@"LSwall02.WAV"];
+                                            else if (accv > 2.5){
+                                                [[SEManager sharedManager] playSound:@"LSwall02.WAV"];
+                                                [self black_Lights];
+                                                [self ColoursOfConnectLights];
                                                 
                                             }
                                             NSLog(@"%f",accv);
@@ -217,7 +223,7 @@
         int n = random() % [hueArray count];
         
         [lightState setHue:curColor];
-        [lightState setBrightness:[NSNumber numberWithInt:180]];
+        [lightState setBrightness:[NSNumber numberWithInt:120]];
         [lightState setSaturation:[NSNumber numberWithInt:254]];
         
         // Send lightstate to light

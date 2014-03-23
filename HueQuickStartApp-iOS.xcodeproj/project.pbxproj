@@ -39,6 +39,7 @@
 		4CCACFDE165693F4008E9D69 /* press_smartbridge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CCACFD6165693F4008E9D69 /* press_smartbridge@2x.png */; };
 		579EEE5818DEAE2C006B7752 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579EEE5718DEAE2C006B7752 /* CoreMotion.framework */; };
 		579EEE5A18DEB173006B7752 /* LSwall02.WAV in Resources */ = {isa = PBXBuildFile; fileRef = 579EEE5918DEB173006B7752 /* LSwall02.WAV */; };
+		579EEE5C18DEB46C006B7752 /* SlowSabr.wav in Resources */ = {isa = PBXBuildFile; fileRef = 579EEE5B18DEB46C006B7752 /* SlowSabr.wav */; };
 		87194E79184F7FA700576916 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87194E78184F7FA700576916 /* CoreGraphics.framework */; };
 		F7ADC2A017FDAAA70038A1D6 /* PHControlLightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7ADC29E17FDAAA70038A1D6 /* PHControlLightsViewController.m */; };
 		F7ADC2A117FDAAA70038A1D6 /* PHControlLightsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7ADC29F17FDAAA70038A1D6 /* PHControlLightsViewController.xib */; };
@@ -93,6 +94,7 @@
 		4CCACFD6165693F4008E9D69 /* press_smartbridge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "press_smartbridge@2x.png"; sourceTree = "<group>"; };
 		579EEE5718DEAE2C006B7752 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		579EEE5918DEB173006B7752 /* LSwall02.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LSwall02.WAV; sourceTree = "<group>"; };
+		579EEE5B18DEB46C006B7752 /* SlowSabr.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SlowSabr.wav; sourceTree = "<group>"; };
 		87194E78184F7FA700576916 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F7ADC29D17FDAAA70038A1D6 /* PHControlLightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHControlLightsViewController.h; sourceTree = "<group>"; };
 		F7ADC29E17FDAAA70038A1D6 /* PHControlLightsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHControlLightsViewController.m; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		4A0E620518DE9D72005D7CB4 /* audio */ = {
 			isa = PBXGroup;
 			children = (
+				579EEE5B18DEB46C006B7752 /* SlowSabr.wav */,
 				579EEE5918DEB173006B7752 /* LSwall02.WAV */,
 				4A0E61FE18DE9D1D005D7CB4 /* SaberOn.wav */,
 				4A0E61FF18DE9D1D005D7CB4 /* saver_fight.mp3 */,
@@ -327,6 +330,7 @@
 				579EEE5A18DEB173006B7752 /* LSwall02.WAV in Resources */,
 				4CCACFDE165693F4008E9D69 /* press_smartbridge@2x.png in Resources */,
 				4A0E620118DE9D1D005D7CB4 /* SaberOn.wav in Resources */,
+				579EEE5C18DEB46C006B7752 /* SlowSabr.wav in Resources */,
 				4C1C84561681F010003EE085 /* PHLoadingViewController.xib in Resources */,
 				F7ADC2A117FDAAA70038A1D6 /* PHControlLightsViewController.xib in Resources */,
 			);
