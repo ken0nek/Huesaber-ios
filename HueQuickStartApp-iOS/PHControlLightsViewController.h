@@ -7,4 +7,8 @@
 
 @interface PHControlLightsViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *typeSegmentedControl;
+
+- (IBAction)segmentChange:(UISegmentedControl *)sender;
+
 @end

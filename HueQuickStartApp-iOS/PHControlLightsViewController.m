@@ -11,6 +11,10 @@
 #define MAX_HUE 65535
 
 @interface PHControlLightsViewController()
+{
+    NSArray *hueArray;
+    NSNumber     *curColor;
+}
 
 @property (nonatomic,weak) IBOutlet UILabel *bridgeMacLabel;
 @property (nonatomic,weak) IBOutlet UILabel *bridgeIpLabel;
@@ -45,6 +49,10 @@
     self.navigationItem.title = @"QuickStart";
     
     [self noLocalConnection];
+    
+    // Red, Blue, Green, Purple
+    hueArray = @[[NSNumber numberWithInt:0], [NSNumber numberWithInt:43690], [NSNumber numberWithInt:21845], [NSNumber numberWithInt:54613]];
+    curColor = hueArray[0];
 }
 
 - (BOOL)canBecomeFirstResponder {
@@ -119,7 +127,7 @@
             [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
             
             self.bridgeLastHeartbeatLabel.text = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:[NSDate date]]];
-            
+            //comm
             [self.randomLightsButton setEnabled:YES];
         } else {
             self.bridgeLastHeartbeatLabel.text = @"Waiting...";
@@ -139,7 +147,11 @@
         
         PHLightState *lightState = [[PHLightState alloc] init];
         
-        [lightState setHue:[NSNumber numberWithInt:arc4random() % MAX_HUE]];
+        srand((unsigned)time(NULL));
+        
+        int n = random() % [hueArray count];
+        
+        [lightState setHue:curColor];
         [lightState setBrightness:[NSNumber numberWithInt:254]];
         [lightState setSaturation:[NSNumber numberWithInt:254]];
         
@@ -159,6 +171,27 @@
 
 - (IBAction)selectOtherBridge:(id)sender{
     [UIAppDelegate searchForBridgeLocal];
+}
+
+- (IBAction)segmentChange:(id)sender {
+    UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
+    switch (segmentedControl.selectedSegmentIndex) {
+        case 0: //blue
+            curColor = hueArray[0];
+            break;
+        case 1: //red
+            curColor = hueArray[1];
+            break;
+        case 2: //green
+            curColor = hueArray[2];
+            break;
+        case 3: //purple
+            curColor = hueArray[3];
+            break;
+        default:
+             curColor = hueArray[3];
+            break;
+    }
 }
 
 - (IBAction)randomizeColoursOfConnectLights:(id)sender{
