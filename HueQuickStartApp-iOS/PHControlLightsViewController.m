@@ -7,6 +7,7 @@
 #import "PHAppDelegate.h"
 
 #import <HueSDK_iOS/HueSDK.h>
+#import "SEManager.h"
 #define MAX_HUE 65535
 
 @interface PHControlLightsViewController()
@@ -45,6 +46,30 @@
     
     [self noLocalConnection];
 }
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+// シェイク開始
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (event.type == UIEventTypeMotion && event.subtype == UIEventSubtypeMotionShake)  {
+        NSLog(@"Motion began");
+       
+        [[SEManager sharedManager] playSound:@"Swing02.wav"];
+         [self ColoursOfConnectLights];
+    }
+}
+
+// シェイク完了
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (event.type == UIEventTypeMotion && event.subtype == UIEventSubtypeMotionShake) {
+        NSLog(@"Motion ended");
+        
+    }
+}
+
 
 - (UIRectEdge)edgesForExtendedLayout {
     return UIRectEdgeLeft | UIRectEdgeBottom | UIRectEdgeRight;
@@ -101,6 +126,35 @@
             [self.randomLightsButton setEnabled:NO];
         }
     }
+}
+
+- (void)ColoursOfConnectLights
+{
+    [self.randomLightsButton setEnabled:NO];
+    
+    PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
+    id<PHBridgeSendAPI> bridgeSendAPI = [[[PHOverallFactory alloc] init] bridgeSendAPI];
+    
+    for (PHLight *light in cache.lights.allValues) {
+        
+        PHLightState *lightState = [[PHLightState alloc] init];
+        
+        [lightState setHue:[NSNumber numberWithInt:arc4random() % MAX_HUE]];
+        [lightState setBrightness:[NSNumber numberWithInt:254]];
+        [lightState setSaturation:[NSNumber numberWithInt:254]];
+        
+        // Send lightstate to light
+        [bridgeSendAPI updateLightStateForId:light.identifier withLighState:lightState completionHandler:^(NSArray *errors) {
+            if (errors != nil) {
+                NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
+                
+                NSLog(@"Response: %@",message);
+            }
+            
+            [self.randomLightsButton setEnabled:YES];
+        }];
+    }
+    
 }
 
 - (IBAction)selectOtherBridge:(id)sender{
