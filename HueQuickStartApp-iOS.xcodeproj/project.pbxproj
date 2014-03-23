@@ -42,6 +42,7 @@
 		4A0E625618DEA565005D7CB4 /* VVAssertionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E624018DEA565005D7CB4 /* VVAssertionHandler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4A0E625718DEA565005D7CB4 /* VVStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E624118DEA565005D7CB4 /* VVStopwatch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4A0E625818DEA565005D7CB4 /* VVThreadLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E624218DEA565005D7CB4 /* VVThreadLoop.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E625A18DEB692005D7CB4 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0E625918DEB692005D7CB4 /* CoreMotion.framework */; };
 		4C1C84551681F010003EE085 /* PHLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C84531681F010003EE085 /* PHLoadingViewController.m */; };
 		4C1C84561681F010003EE085 /* PHLoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C1C84541681F010003EE085 /* PHLoadingViewController.xib */; };
 		4CCACF97165692D4008E9D69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCACF96165692D4008E9D69 /* UIKit.framework */; };
@@ -133,6 +134,7 @@
 		4A0E624018DEA565005D7CB4 /* VVAssertionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVAssertionHandler.m; sourceTree = "<group>"; };
 		4A0E624118DEA565005D7CB4 /* VVStopwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVStopwatch.m; sourceTree = "<group>"; };
 		4A0E624218DEA565005D7CB4 /* VVThreadLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVThreadLoop.m; sourceTree = "<group>"; };
+		4A0E625918DEB692005D7CB4 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		4C1C84521681F010003EE085 /* PHLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHLoadingViewController.h; sourceTree = "<group>"; };
 		4C1C84531681F010003EE085 /* PHLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHLoadingViewController.m; sourceTree = "<group>"; };
 		4C1C84541681F010003EE085 /* PHLoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHLoadingViewController.xib; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A0E625A18DEB692005D7CB4 /* CoreMotion.framework in Frameworks */,
 				4A0E620718DE9D85005D7CB4 /* AVFoundation.framework in Frameworks */,
 				87194E79184F7FA700576916 /* CoreGraphics.framework in Frameworks */,
 				4CCACF97165692D4008E9D69 /* UIKit.framework in Frameworks */,
@@ -329,6 +332,7 @@
 		4CCACF95165692D4008E9D69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A0E625918DEB692005D7CB4 /* CoreMotion.framework */,
 				4A0E620618DE9D85005D7CB4 /* AVFoundation.framework */,
 				4A0E61E418DE9D09005D7CB4 /* Lumberjack */,
 				4A0E61F418DE9D09005D7CB4 /* HueSDK_iOS.framework */,
