@@ -21,6 +21,28 @@
 		4A0E620718DE9D85005D7CB4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0E620618DE9D85005D7CB4 /* AVFoundation.framework */; };
 		4A0E620C18DE9D9F005D7CB4 /* AVFound_rapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E620918DE9D9F005D7CB4 /* AVFound_rapper.m */; };
 		4A0E620D18DE9D9F005D7CB4 /* SEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E620B18DE9D9F005D7CB4 /* SEManager.m */; };
+		4A0E624418DEA565005D7CB4 /* MutLockArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E622E18DEA565005D7CB4 /* MutLockArray.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E624518DEA565005D7CB4 /* MutLockDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E622F18DEA565005D7CB4 /* MutLockDict.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E624618DEA565005D7CB4 /* MutNRLockArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E623018DEA565005D7CB4 /* MutNRLockArray.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E624718DEA565005D7CB4 /* MutNRLockDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E623118DEA565005D7CB4 /* MutNRLockDict.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E624818DEA565005D7CB4 /* NamedMutLockArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E623218DEA565005D7CB4 /* NamedMutLockArray.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E624918DEA565005D7CB4 /* ObjectHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E623318DEA565005D7CB4 /* ObjectHolder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E624A18DEA565005D7CB4 /* OSCAddressSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E623418DEA565005D7CB4 /* OSCAddressSpace.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E624B18DEA565005D7CB4 /* OSCBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E623518DEA565005D7CB4 /* OSCBundle.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E624C18DEA565005D7CB4 /* OSCInPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E623618DEA565005D7CB4 /* OSCInPort.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E624D18DEA565005D7CB4 /* OSCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E623718DEA565005D7CB4 /* OSCManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E624E18DEA565005D7CB4 /* OSCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E623818DEA565005D7CB4 /* OSCMessage.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E624F18DEA565005D7CB4 /* OSCNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E623918DEA565005D7CB4 /* OSCNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E625018DEA565005D7CB4 /* OSCOutPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E623A18DEA565005D7CB4 /* OSCOutPort.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E625118DEA565005D7CB4 /* OSCPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E623B18DEA565005D7CB4 /* OSCPacket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E625218DEA565005D7CB4 /* OSCStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E623C18DEA565005D7CB4 /* OSCStringAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E625318DEA565005D7CB4 /* OSCValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E623D18DEA565005D7CB4 /* OSCValue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E625418DEA565005D7CB4 /* OSCZeroConfDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E623E18DEA565005D7CB4 /* OSCZeroConfDomain.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E625518DEA565005D7CB4 /* OSCZeroConfManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E623F18DEA565005D7CB4 /* OSCZeroConfManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E625618DEA565005D7CB4 /* VVAssertionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E624018DEA565005D7CB4 /* VVAssertionHandler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E625718DEA565005D7CB4 /* VVStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E624118DEA565005D7CB4 /* VVStopwatch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E625818DEA565005D7CB4 /* VVThreadLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E624218DEA565005D7CB4 /* VVThreadLoop.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4A0E625A18DEB692005D7CB4 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0E625918DEB692005D7CB4 /* CoreMotion.framework */; };
 		4C1C84551681F010003EE085 /* PHLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C84531681F010003EE085 /* PHLoadingViewController.m */; };
 		4C1C84561681F010003EE085 /* PHLoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C1C84541681F010003EE085 /* PHLoadingViewController.xib */; };
 		4CCACF97165692D4008E9D69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCACF96165692D4008E9D69 /* UIKit.framework */; };
@@ -66,6 +88,53 @@
 		4A0E620918DE9D9F005D7CB4 /* AVFound_rapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVFound_rapper.m; sourceTree = "<group>"; };
 		4A0E620A18DE9D9F005D7CB4 /* SEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEManager.h; sourceTree = "<group>"; };
 		4A0E620B18DE9D9F005D7CB4 /* SEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEManager.m; sourceTree = "<group>"; };
+		4A0E621318DEA565005D7CB4 /* MutLockArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutLockArray.h; sourceTree = "<group>"; };
+		4A0E621418DEA565005D7CB4 /* MutLockDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutLockDict.h; sourceTree = "<group>"; };
+		4A0E621518DEA565005D7CB4 /* MutNRLockArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutNRLockArray.h; sourceTree = "<group>"; };
+		4A0E621618DEA565005D7CB4 /* MutNRLockDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutNRLockDict.h; sourceTree = "<group>"; };
+		4A0E621718DEA565005D7CB4 /* NamedMutLockArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NamedMutLockArray.h; sourceTree = "<group>"; };
+		4A0E621818DEA565005D7CB4 /* ObjectHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectHolder.h; sourceTree = "<group>"; };
+		4A0E621918DEA565005D7CB4 /* OSCAddressSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCAddressSpace.h; sourceTree = "<group>"; };
+		4A0E621A18DEA565005D7CB4 /* OSCBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCBundle.h; sourceTree = "<group>"; };
+		4A0E621B18DEA565005D7CB4 /* OSCConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCConstants.h; sourceTree = "<group>"; };
+		4A0E621C18DEA565005D7CB4 /* OSCInPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCInPort.h; sourceTree = "<group>"; };
+		4A0E621D18DEA565005D7CB4 /* OSCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCManager.h; sourceTree = "<group>"; };
+		4A0E621E18DEA565005D7CB4 /* OSCMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCMessage.h; sourceTree = "<group>"; };
+		4A0E621F18DEA565005D7CB4 /* OSCNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCNode.h; sourceTree = "<group>"; };
+		4A0E622018DEA565005D7CB4 /* OSCOutPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCOutPort.h; sourceTree = "<group>"; };
+		4A0E622118DEA565005D7CB4 /* OSCPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCPacket.h; sourceTree = "<group>"; };
+		4A0E622218DEA565005D7CB4 /* OSCStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCStringAdditions.h; sourceTree = "<group>"; };
+		4A0E622318DEA565005D7CB4 /* OSCValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCValue.h; sourceTree = "<group>"; };
+		4A0E622418DEA565005D7CB4 /* OSCZeroConfDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCZeroConfDomain.h; sourceTree = "<group>"; };
+		4A0E622518DEA565005D7CB4 /* OSCZeroConfManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCZeroConfManager.h; sourceTree = "<group>"; };
+		4A0E622618DEA565005D7CB4 /* VVAssertionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVAssertionHandler.h; sourceTree = "<group>"; };
+		4A0E622718DEA565005D7CB4 /* VVBasicMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVBasicMacros.h; sourceTree = "<group>"; };
+		4A0E622818DEA565005D7CB4 /* VVBasics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVBasics.h; sourceTree = "<group>"; };
+		4A0E622918DEA565005D7CB4 /* VVOSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVOSC.h; sourceTree = "<group>"; };
+		4A0E622A18DEA565005D7CB4 /* VVStopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVStopwatch.h; sourceTree = "<group>"; };
+		4A0E622B18DEA565005D7CB4 /* VVThreadLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVThreadLoop.h; sourceTree = "<group>"; };
+		4A0E622E18DEA565005D7CB4 /* MutLockArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutLockArray.m; sourceTree = "<group>"; };
+		4A0E622F18DEA565005D7CB4 /* MutLockDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutLockDict.m; sourceTree = "<group>"; };
+		4A0E623018DEA565005D7CB4 /* MutNRLockArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutNRLockArray.m; sourceTree = "<group>"; };
+		4A0E623118DEA565005D7CB4 /* MutNRLockDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutNRLockDict.m; sourceTree = "<group>"; };
+		4A0E623218DEA565005D7CB4 /* NamedMutLockArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NamedMutLockArray.m; sourceTree = "<group>"; };
+		4A0E623318DEA565005D7CB4 /* ObjectHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectHolder.m; sourceTree = "<group>"; };
+		4A0E623418DEA565005D7CB4 /* OSCAddressSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCAddressSpace.m; sourceTree = "<group>"; };
+		4A0E623518DEA565005D7CB4 /* OSCBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCBundle.m; sourceTree = "<group>"; };
+		4A0E623618DEA565005D7CB4 /* OSCInPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCInPort.m; sourceTree = "<group>"; };
+		4A0E623718DEA565005D7CB4 /* OSCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCManager.m; sourceTree = "<group>"; };
+		4A0E623818DEA565005D7CB4 /* OSCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCMessage.m; sourceTree = "<group>"; };
+		4A0E623918DEA565005D7CB4 /* OSCNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCNode.m; sourceTree = "<group>"; };
+		4A0E623A18DEA565005D7CB4 /* OSCOutPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCOutPort.m; sourceTree = "<group>"; };
+		4A0E623B18DEA565005D7CB4 /* OSCPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCPacket.m; sourceTree = "<group>"; };
+		4A0E623C18DEA565005D7CB4 /* OSCStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCStringAdditions.m; sourceTree = "<group>"; };
+		4A0E623D18DEA565005D7CB4 /* OSCValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCValue.m; sourceTree = "<group>"; };
+		4A0E623E18DEA565005D7CB4 /* OSCZeroConfDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCZeroConfDomain.m; sourceTree = "<group>"; };
+		4A0E623F18DEA565005D7CB4 /* OSCZeroConfManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCZeroConfManager.m; sourceTree = "<group>"; };
+		4A0E624018DEA565005D7CB4 /* VVAssertionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVAssertionHandler.m; sourceTree = "<group>"; };
+		4A0E624118DEA565005D7CB4 /* VVStopwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVStopwatch.m; sourceTree = "<group>"; };
+		4A0E624218DEA565005D7CB4 /* VVThreadLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVThreadLoop.m; sourceTree = "<group>"; };
+		4A0E625918DEB692005D7CB4 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		4C1C84521681F010003EE085 /* PHLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHLoadingViewController.h; sourceTree = "<group>"; };
 		4C1C84531681F010003EE085 /* PHLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHLoadingViewController.m; sourceTree = "<group>"; };
 		4C1C84541681F010003EE085 /* PHLoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHLoadingViewController.xib; sourceTree = "<group>"; };
@@ -100,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A0E625A18DEB692005D7CB4 /* CoreMotion.framework in Frameworks */,
 				4A0E620718DE9D85005D7CB4 /* AVFoundation.framework in Frameworks */,
 				87194E79184F7FA700576916 /* CoreGraphics.framework in Frameworks */,
 				4CCACF97165692D4008E9D69 /* UIKit.framework in Frameworks */,
@@ -161,6 +231,76 @@
 			name = libs;
 			sourceTree = "<group>";
 		};
+		4A0E621118DEA565005D7CB4 /* VVOSC */ = {
+			isa = PBXGroup;
+			children = (
+				4A0E621218DEA565005D7CB4 /* include */,
+				4A0E622D18DEA565005D7CB4 /* src */,
+			);
+			name = VVOSC;
+			path = ../VVOSC;
+			sourceTree = "<group>";
+		};
+		4A0E621218DEA565005D7CB4 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				4A0E621318DEA565005D7CB4 /* MutLockArray.h */,
+				4A0E621418DEA565005D7CB4 /* MutLockDict.h */,
+				4A0E621518DEA565005D7CB4 /* MutNRLockArray.h */,
+				4A0E621618DEA565005D7CB4 /* MutNRLockDict.h */,
+				4A0E621718DEA565005D7CB4 /* NamedMutLockArray.h */,
+				4A0E621818DEA565005D7CB4 /* ObjectHolder.h */,
+				4A0E621918DEA565005D7CB4 /* OSCAddressSpace.h */,
+				4A0E621A18DEA565005D7CB4 /* OSCBundle.h */,
+				4A0E621B18DEA565005D7CB4 /* OSCConstants.h */,
+				4A0E621C18DEA565005D7CB4 /* OSCInPort.h */,
+				4A0E621D18DEA565005D7CB4 /* OSCManager.h */,
+				4A0E621E18DEA565005D7CB4 /* OSCMessage.h */,
+				4A0E621F18DEA565005D7CB4 /* OSCNode.h */,
+				4A0E622018DEA565005D7CB4 /* OSCOutPort.h */,
+				4A0E622118DEA565005D7CB4 /* OSCPacket.h */,
+				4A0E622218DEA565005D7CB4 /* OSCStringAdditions.h */,
+				4A0E622318DEA565005D7CB4 /* OSCValue.h */,
+				4A0E622418DEA565005D7CB4 /* OSCZeroConfDomain.h */,
+				4A0E622518DEA565005D7CB4 /* OSCZeroConfManager.h */,
+				4A0E622618DEA565005D7CB4 /* VVAssertionHandler.h */,
+				4A0E622718DEA565005D7CB4 /* VVBasicMacros.h */,
+				4A0E622818DEA565005D7CB4 /* VVBasics.h */,
+				4A0E622918DEA565005D7CB4 /* VVOSC.h */,
+				4A0E622A18DEA565005D7CB4 /* VVStopwatch.h */,
+				4A0E622B18DEA565005D7CB4 /* VVThreadLoop.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		4A0E622D18DEA565005D7CB4 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				4A0E622E18DEA565005D7CB4 /* MutLockArray.m */,
+				4A0E622F18DEA565005D7CB4 /* MutLockDict.m */,
+				4A0E623018DEA565005D7CB4 /* MutNRLockArray.m */,
+				4A0E623118DEA565005D7CB4 /* MutNRLockDict.m */,
+				4A0E623218DEA565005D7CB4 /* NamedMutLockArray.m */,
+				4A0E623318DEA565005D7CB4 /* ObjectHolder.m */,
+				4A0E623418DEA565005D7CB4 /* OSCAddressSpace.m */,
+				4A0E623518DEA565005D7CB4 /* OSCBundle.m */,
+				4A0E623618DEA565005D7CB4 /* OSCInPort.m */,
+				4A0E623718DEA565005D7CB4 /* OSCManager.m */,
+				4A0E623818DEA565005D7CB4 /* OSCMessage.m */,
+				4A0E623918DEA565005D7CB4 /* OSCNode.m */,
+				4A0E623A18DEA565005D7CB4 /* OSCOutPort.m */,
+				4A0E623B18DEA565005D7CB4 /* OSCPacket.m */,
+				4A0E623C18DEA565005D7CB4 /* OSCStringAdditions.m */,
+				4A0E623D18DEA565005D7CB4 /* OSCValue.m */,
+				4A0E623E18DEA565005D7CB4 /* OSCZeroConfDomain.m */,
+				4A0E623F18DEA565005D7CB4 /* OSCZeroConfManager.m */,
+				4A0E624018DEA565005D7CB4 /* VVAssertionHandler.m */,
+				4A0E624118DEA565005D7CB4 /* VVStopwatch.m */,
+				4A0E624218DEA565005D7CB4 /* VVThreadLoop.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		4C1C84511681F010003EE085 /* LoadingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +332,7 @@
 		4CCACF95165692D4008E9D69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A0E625918DEB692005D7CB4 /* CoreMotion.framework */,
 				4A0E620618DE9D85005D7CB4 /* AVFoundation.framework */,
 				4A0E61E418DE9D09005D7CB4 /* Lumberjack */,
 				4A0E61F418DE9D09005D7CB4 /* HueSDK_iOS.framework */,
@@ -207,6 +348,7 @@
 			children = (
 				4A0E620E18DE9DAE005D7CB4 /* libs */,
 				4A0E620518DE9D72005D7CB4 /* audio */,
+				4A0E621118DEA565005D7CB4 /* VVOSC */,
 				4CCACFA5165692D5008E9D69 /* PHAppDelegate.h */,
 				4CCACFA6165692D5008E9D69 /* PHAppDelegate.m */,
 				F7ADC29D17FDAAA70038A1D6 /* PHControlLightsViewController.h */,
@@ -331,20 +473,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A0E624918DEA565005D7CB4 /* ObjectHolder.m in Sources */,
 				4A0E61F818DE9D09005D7CB4 /* DDLog.m in Sources */,
 				4A0E61F618DE9D09005D7CB4 /* DDASLLogger.m in Sources */,
+				4A0E625618DEA565005D7CB4 /* VVAssertionHandler.m in Sources */,
 				4CCACFA3165692D5008E9D69 /* main.m in Sources */,
+				4A0E624B18DEA565005D7CB4 /* OSCBundle.m in Sources */,
+				4A0E624718DEA565005D7CB4 /* MutNRLockDict.m in Sources */,
+				4A0E624518DEA565005D7CB4 /* MutLockDict.m in Sources */,
+				4A0E624C18DEA565005D7CB4 /* OSCInPort.m in Sources */,
+				4A0E624818DEA565005D7CB4 /* NamedMutLockArray.m in Sources */,
+				4A0E625018DEA565005D7CB4 /* OSCOutPort.m in Sources */,
+				4A0E624D18DEA565005D7CB4 /* OSCManager.m in Sources */,
+				4A0E625518DEA565005D7CB4 /* OSCZeroConfManager.m in Sources */,
 				4CCACFA7165692D5008E9D69 /* PHAppDelegate.m in Sources */,
+				4A0E625218DEA565005D7CB4 /* OSCStringAdditions.m in Sources */,
+				4A0E624E18DEA565005D7CB4 /* OSCMessage.m in Sources */,
+				4A0E624618DEA565005D7CB4 /* MutNRLockArray.m in Sources */,
+				4A0E624A18DEA565005D7CB4 /* OSCAddressSpace.m in Sources */,
 				4A0E61FB18DE9D09005D7CB4 /* DispatchQueueLogFormatter.m in Sources */,
+				4A0E625418DEA565005D7CB4 /* OSCZeroConfDomain.m in Sources */,
 				4A0E61F918DE9D09005D7CB4 /* DDTTYLogger.m in Sources */,
 				4CCACFD9165693F4008E9D69 /* PHBridgePushLinkViewController.m in Sources */,
+				4A0E624418DEA565005D7CB4 /* MutLockArray.m in Sources */,
+				4A0E625818DEA565005D7CB4 /* VVThreadLoop.m in Sources */,
 				4CCACFDB165693F4008E9D69 /* PHBridgeSelectionViewController.m in Sources */,
+				4A0E625318DEA565005D7CB4 /* OSCValue.m in Sources */,
 				4A0E61F518DE9D09005D7CB4 /* DDAbstractDatabaseLogger.m in Sources */,
 				4C1C84551681F010003EE085 /* PHLoadingViewController.m in Sources */,
+				4A0E624F18DEA565005D7CB4 /* OSCNode.m in Sources */,
 				4A0E61F718DE9D09005D7CB4 /* DDFileLogger.m in Sources */,
+				4A0E625718DEA565005D7CB4 /* VVStopwatch.m in Sources */,
 				4A0E620C18DE9D9F005D7CB4 /* AVFound_rapper.m in Sources */,
 				4A0E620D18DE9D9F005D7CB4 /* SEManager.m in Sources */,
 				F7ADC2A017FDAAA70038A1D6 /* PHControlLightsViewController.m in Sources */,
+				4A0E625118DEA565005D7CB4 /* OSCPacket.m in Sources */,
 				4A0E61FA18DE9D09005D7CB4 /* ContextFilterLogFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,6 +552,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -438,8 +602,13 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
+					"/Users/Ken_Tominaga/Desktop/Xcode_practice/Libraries/PhilipsHueSDK-iOS-OSX/Huesaber-ios/HueQuickStartApp-iOS",
+					"/Users/Ken_Tominaga/Desktop/Xcode_practice/Libraries/PhilipsHueSDK-iOS-OSX/Huesaber-ios/VVOSC",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "HueQuickStartApp-iOS";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -466,8 +635,13 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
+					"/Users/Ken_Tominaga/Desktop/Xcode_practice/Libraries/PhilipsHueSDK-iOS-OSX/Huesaber-ios/HueQuickStartApp-iOS",
+					"/Users/Ken_Tominaga/Desktop/Xcode_practice/Libraries/PhilipsHueSDK-iOS-OSX/Huesaber-ios/VVOSC",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "HueQuickStartApp-iOS";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";

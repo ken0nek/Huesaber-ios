@@ -10,6 +10,6 @@
 /**
  The label shown below the loading spinner
  */
-@property (nonatomic,weak) IBOutlet UILabel *loadingLabel;
+@property (nonatomic,strong) IBOutlet UILabel *loadingLabel;
 
 @end

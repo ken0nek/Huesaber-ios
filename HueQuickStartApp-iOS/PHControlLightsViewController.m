@@ -6,15 +6,22 @@
 #import "PHControlLightsViewController.h"
 #import "PHAppDelegate.h"
 
+#import "VVOSC.h"
+
 #import <HueSDK_iOS/HueSDK.h>
 #define MAX_HUE 65535
+#define BASE_URL @"192.168.111.26"
+#define PORT 12345
 
-@interface PHControlLightsViewController()
+@interface PHControlLightsViewController(){
+    NSArray *hueArray;
+    OSCManager *oscManager;
+}
 
-@property (nonatomic,weak) IBOutlet UILabel *bridgeMacLabel;
-@property (nonatomic,weak) IBOutlet UILabel *bridgeIpLabel;
-@property (nonatomic,weak) IBOutlet UILabel *bridgeLastHeartbeatLabel;
-@property (nonatomic,weak) IBOutlet UIButton *randomLightsButton;
+@property (nonatomic,strong) IBOutlet UILabel *bridgeMacLabel;
+@property (nonatomic,strong) IBOutlet UILabel *bridgeIpLabel;
+@property (nonatomic,strong) IBOutlet UILabel *bridgeLastHeartbeatLabel;
+@property (nonatomic,strong) IBOutlet UIButton *randomLightsButton;
 
 @end
 
@@ -44,6 +51,12 @@
     self.navigationItem.title = @"QuickStart";
     
     [self noLocalConnection];
+    
+    // Red, Blue, Green, Purple
+    hueArray = @[[NSNumber numberWithInt:0], [NSNumber numberWithInt:43690], [NSNumber numberWithInt:0], [NSNumber numberWithInt:21845], [NSNumber numberWithInt:54613]];
+    
+    oscManager = [[OSCManager alloc] init];
+    oscManager.delegate = self;
 }
 
 - (UIRectEdge)edgesForExtendedLayout {
@@ -117,9 +130,14 @@
         
         PHLightState *lightState = [[PHLightState alloc] init];
         
-        [lightState setHue:[NSNumber numberWithInt:arc4random() % MAX_HUE]];
+        //[lightState setHue:[NSNumber numberWithInt:arc4random() % MAX_HUE]];
+        int arrayIndex = arc4random() % 4;
+        NSLog(@"index = %d", arrayIndex);
+        [lightState setHue:hueArray[arrayIndex]];
         [lightState setBrightness:[NSNumber numberWithInt:254]];
         [lightState setSaturation:[NSNumber numberWithInt:254]];
+        
+        [self sendHSB:[lightState.hue intValue] withBrightness:[lightState.brightness intValue] withSaturaion:[lightState.saturation intValue]];
         
         // Send lightstate to light
         [bridgeSendAPI updateLightStateForId:light.identifier withLighState:lightState completionHandler:^(NSArray *errors) {
@@ -132,6 +150,16 @@
             [self.randomLightsButton setEnabled:YES];
         }];
     }
+}
+
+- (void)sendHSB:(int)hue withBrightness:(int)brightness withSaturaion:(int)saturation{
+    OSCOutPort *outPort = [oscManager createNewOutputToAddress:BASE_URL atPort:PORT];
+    
+    OSCMessage *message = [OSCMessage createWithAddress:@"/huesaber/color"];
+    [message addInt:hue];
+    [message addInt:saturation];
+    [message addInt:brightness];
+    [outPort sendThisPacket:[OSCPacket createWithContent:message]];
 }
 
 - (void)findNewBridgeButtonAction{
