@@ -6,17 +6,22 @@
 #import "PHControlLightsViewController.h"
 #import "PHAppDelegate.h"
 
+#import "VVOSC.h"
+
 #import <HueSDK_iOS/HueSDK.h>
 #define MAX_HUE 65535
+#define BASE_URL @"192.168.2.21"
+#define PORT 12345
 
 @interface PHControlLightsViewController(){
     NSArray *hueArray;
+    OSCManager *oscManager;
 }
 
-@property (nonatomic,weak) IBOutlet UILabel *bridgeMacLabel;
-@property (nonatomic,weak) IBOutlet UILabel *bridgeIpLabel;
-@property (nonatomic,weak) IBOutlet UILabel *bridgeLastHeartbeatLabel;
-@property (nonatomic,weak) IBOutlet UIButton *randomLightsButton;
+@property (nonatomic,strong) IBOutlet UILabel *bridgeMacLabel;
+@property (nonatomic,strong) IBOutlet UILabel *bridgeIpLabel;
+@property (nonatomic,strong) IBOutlet UILabel *bridgeLastHeartbeatLabel;
+@property (nonatomic,strong) IBOutlet UIButton *randomLightsButton;
 
 @end
 
@@ -49,6 +54,9 @@
     
     // Red, Blue, Green, Purple
     hueArray = @[[NSNumber numberWithInt:0], [NSNumber numberWithInt:43690], [NSNumber numberWithInt:0], [NSNumber numberWithInt:21845], [NSNumber numberWithInt:54613]];
+    
+    oscManager = [[OSCManager alloc] init];
+    oscManager.delegate = self;
 }
 
 - (UIRectEdge)edgesForExtendedLayout {
@@ -126,6 +134,8 @@
         [lightState setBrightness:[NSNumber numberWithInt:254]];
         [lightState setSaturation:[NSNumber numberWithInt:254]];
         
+        //[self sendHSB:[lightState.hue intValue] withBrightness:[lightState.brightness intValue] withSaturaion:[lightState.saturation intValue]];
+        
         // Send lightstate to light
         [bridgeSendAPI updateLightStateForId:light.identifier withLighState:lightState completionHandler:^(NSArray *errors) {
             if (errors != nil) {
@@ -137,6 +147,16 @@
             [self.randomLightsButton setEnabled:YES];
         }];
     }
+}
+
+- (void)sendHSB:(int)hue withBrightness:(int)brightness withSaturaion:(int)saturation{
+    OSCOutPort *outPort = [oscManager createNewOutputToAddress:BASE_URL atPort:PORT];
+    
+    OSCMessage *message = [OSCMessage createWithAddress:@"/huesaber/color"];
+    [message addInt:hue];
+    [message addInt:brightness];
+    [message addInt:saturation];
+    [outPort sendThisPacket:[OSCPacket createWithContent:message]];
 }
 
 - (void)findNewBridgeButtonAction{
