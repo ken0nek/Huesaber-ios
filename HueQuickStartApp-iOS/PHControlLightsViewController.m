@@ -18,6 +18,7 @@
     NSNumber *curbright;
     NSNumber     *curColor;
     CMMotionManager *motionManager;
+    BOOL StartFlag;
 }
 
 @property (nonatomic,weak) IBOutlet UILabel *bridgeMacLabel;
@@ -59,6 +60,7 @@
     huebrightArray = @[[NSNumber numberWithInt:50], [NSNumber numberWithInt:100] ,[NSNumber numberWithInt:150]];
     curbright = huebrightArray[0];
     curColor = hueArray[1];
+    StartFlag = NO;
     
 }
 
@@ -77,18 +79,21 @@
                                             CMAcceleration acceleration = accelerometerData.acceleration;
                                             double accv = acceleration.x*acceleration.x + acceleration.y *acceleration.y + acceleration.z*acceleration.z;
                                             accv = sqrt(accv);
-                                            if (accv > 1.1 && accv <= 1.8) {
-                                                [[SEManager sharedManager] playSound:@"SlowSabr.wav"];
+                                            if (accv > 1.1 && accv <= 1.4) {
+                                              //  [[SEManager sharedManager] playSound:@"SlowSabr.wav"];
+                                                [self soundON:@"SlowSabr.wav"];
                                                 curbright = huebrightArray[0];
                                                 [self ColoursOfConnectLights];
                                             }
-                                            if (accv > 1.8 && accv <= 2.5) {
-                                                [[SEManager sharedManager] playSound:@"Swing02.wav"];
+                                            if (accv > 1.4 && accv <= 1.8) {
+                                               // [[SEManager sharedManager] playSound:@"Swing02.wav"];
+                                                 [self soundON:@"Swing02.wav"];
                                                  curbright = huebrightArray[1];
                                                 [self ColoursOfConnectLights];
                                             }
-                                            else if (accv > 2.5){
-                                                [[SEManager sharedManager] playSound:@"LSwall02.WAV"];
+                                            else if (accv > 1.8){
+                                               // [[SEManager sharedManager] playSound:@"LSwall02.WAV"];
+                                                  [self soundON:@"LSwall02.WAV"];
                                                 [self black_Lights];
                                                  curbright = huebrightArray[2];
                                                 [self ColoursOfConnectLights];
@@ -102,6 +107,7 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [motionManager stopAccelerometerUpdates];
+    StartFlag = NO;
     [super viewWillDisappear:animated];
 }
 - (BOOL)canBecomeFirstResponder {
@@ -214,9 +220,19 @@
 
 }
 
+- (void)soundON:(NSString *)file
+{
+    if (StartFlag) {
+         [[SEManager sharedManager] playSound:file];
+    }
+   
+}
+
 - (void)ColoursOfConnectLights
 {
-    [self.randomLightsButton setEnabled:NO];
+    //[self.randomLightsButton setEnabled:NO];
+    
+    if(!StartFlag) return;
     
     PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
     id<PHBridgeSendAPI> bridgeSendAPI = [[[PHOverallFactory alloc] init] bridgeSendAPI];
@@ -224,10 +240,6 @@
     for (PHLight *light in cache.lights.allValues) {
         
         PHLightState *lightState = [[PHLightState alloc] init];
-        
-        srand((unsigned)time(NULL));
-        
-        int n = random() % [hueArray count];
         
         [lightState setHue:curColor];
         [lightState setBrightness:curbright];
@@ -241,7 +253,7 @@
                 NSLog(@"Response: %@",message);
             }
             
-            [self.randomLightsButton setEnabled:YES];
+          //  [self.randomLightsButton setEnabled:YES];
         }];
     }
     
@@ -274,6 +286,7 @@
 
 - (IBAction)start_light:(id)sender
 {
+    StartFlag = YES;
     [self black_Lights];
     [[SEManager sharedManager] playSound:@"SaberOn.wav"];
     [self ColoursOfConnectLights];
