@@ -10,7 +10,7 @@
 
 #import <HueSDK_iOS/HueSDK.h>
 #define MAX_HUE 65535
-#define BASE_URL @"192.168.2.21"
+#define BASE_URL @"192.168.111.26"
 #define PORT 12345
 
 @interface PHControlLightsViewController(){
@@ -130,11 +130,14 @@
         
         PHLightState *lightState = [[PHLightState alloc] init];
         
-        [lightState setHue:[NSNumber numberWithInt:arc4random() % MAX_HUE]];
+        //[lightState setHue:[NSNumber numberWithInt:arc4random() % MAX_HUE]];
+        int arrayIndex = arc4random() % 4;
+        NSLog(@"index = %d", arrayIndex);
+        [lightState setHue:hueArray[arrayIndex]];
         [lightState setBrightness:[NSNumber numberWithInt:254]];
         [lightState setSaturation:[NSNumber numberWithInt:254]];
         
-        //[self sendHSB:[lightState.hue intValue] withBrightness:[lightState.brightness intValue] withSaturaion:[lightState.saturation intValue]];
+        [self sendHSB:[lightState.hue intValue] withBrightness:[lightState.brightness intValue] withSaturaion:[lightState.saturation intValue]];
         
         // Send lightstate to light
         [bridgeSendAPI updateLightStateForId:light.identifier withLighState:lightState completionHandler:^(NSArray *errors) {
@@ -154,8 +157,8 @@
     
     OSCMessage *message = [OSCMessage createWithAddress:@"/huesaber/color"];
     [message addInt:hue];
-    [message addInt:brightness];
     [message addInt:saturation];
+    [message addInt:brightness];
     [outPort sendThisPacket:[OSCPacket createWithContent:message]];
 }
 
