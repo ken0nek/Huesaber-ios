@@ -9,7 +9,9 @@
 #import <HueSDK_iOS/HueSDK.h>
 #define MAX_HUE 65535
 
-@interface PHControlLightsViewController()
+@interface PHControlLightsViewController(){
+    NSArray *hueArray;
+}
 
 @property (nonatomic,weak) IBOutlet UILabel *bridgeMacLabel;
 @property (nonatomic,weak) IBOutlet UILabel *bridgeIpLabel;
@@ -44,6 +46,9 @@
     self.navigationItem.title = @"QuickStart";
     
     [self noLocalConnection];
+    
+    // Red, Blue, Green, Purple
+    hueArray = @[[NSNumber numberWithInt:0], [NSNumber numberWithInt:43690], [NSNumber numberWithInt:0], [NSNumber numberWithInt:21845], [NSNumber numberWithInt:54613]];
 }
 
 - (UIRectEdge)edgesForExtendedLayout {
