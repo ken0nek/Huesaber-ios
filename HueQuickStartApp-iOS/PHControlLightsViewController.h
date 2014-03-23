@@ -10,5 +10,6 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *typeSegmentedControl;
 
 - (IBAction)segmentChange:(UISegmentedControl *)sender;
+- (IBAction)start_light:(id)sender;
 
 @end

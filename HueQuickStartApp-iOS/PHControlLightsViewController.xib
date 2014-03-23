@@ -50,11 +50,11 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
-						<object class="NSColor" key="IBUINormalTitleColor">
+						<object class="NSColor" key="IBUINormalTitleColor" id="720415135">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MzE0IDAuMzA5ODAzOTIxNiAwLjUyMTU2ODYyNzUAA</bytes>
 						</object>
-						<object class="NSColor" key="IBUIHighlightedTitleColor">
+						<object class="NSColor" key="IBUIHighlightedTitleColor" id="199174442">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
 						</object>
@@ -63,15 +63,15 @@
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
 						</object>
-						<object class="NSColor" key="IBUINormalTitleShadowColor">
+						<object class="NSColor" key="IBUINormalTitleShadowColor" id="793354451">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC41AA</bytes>
 						</object>
-						<object class="IBUIFontDescription" key="IBUIFontDescription">
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="171590149">
 							<int key="type">2</int>
 							<double key="pointSize">15</double>
 						</object>
-						<object class="NSFont" key="IBUIFont">
+						<object class="NSFont" key="IBUIFont" id="115396171">
 							<string key="NSName">HelveticaNeue-Bold</string>
 							<double key="NSSize">15</double>
 							<int key="NSfFlags">16</int>
@@ -259,7 +259,7 @@
 						<reference key="IBUIFont" ref="192598562"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
-					<object class="IBUISegmentedControl" id="511751410">
+					<object class="IBUISegmentedControl" id="2774552">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 342}, {287, 44}}</string>
@@ -300,6 +300,25 @@
 							<reference ref="4"/>
 							<reference ref="4"/>
 						</array>
+					</object>
+					<object class="IBUIButton" id="849838218">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{124, 266}, {70, 44}}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<int key="IBUIContentHorizontalAlignment">0</int>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<int key="IBUIButtonType">1</int>
+						<reference key="IBUINormalTitleColor" ref="720415135"/>
+						<reference key="IBUIHighlightedTitleColor" ref="199174442"/>
+						<string key="IBUINormalTitle">start</string>
+						<reference key="IBUINormalTitleShadowColor" ref="793354451"/>
+						<reference key="IBUIFontDescription" ref="171590149"/>
+						<reference key="IBUIFont" ref="115396171"/>
 					</object>
 				</array>
 				<string key="NSFrame">{{0, 20}, {319.99999999999994, 548}}</string>
@@ -380,7 +399,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">typeSegmentedControl</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="511751410"/>
+						<reference key="destination" ref="2774552"/>
 					</object>
 					<int key="connectionID">88</int>
 				</object>
@@ -396,11 +415,20 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">segmentChange:</string>
-						<reference key="source" ref="511751410"/>
+						<reference key="source" ref="2774552"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">13</int>
 					</object>
 					<int key="connectionID">89</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">start_light:</string>
+						<reference key="source" ref="849838218"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">91</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -423,7 +451,8 @@
 							<reference ref="477463536"/>
 							<reference ref="921178273"/>
 							<reference ref="859833637"/>
-							<reference ref="511751410"/>
+							<reference ref="2774552"/>
+							<reference ref="849838218"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -481,7 +510,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">87</int>
-						<reference key="object" ref="511751410"/>
+						<reference key="object" ref="2774552"/>
+						<reference key="parent" ref="191373211"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">90</int>
+						<reference key="object" ref="849838218"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>
@@ -503,12 +537,13 @@
 				<string key="82.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="87.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<integer value="2" key="87.IUISegmentedControlInspectorSelectedSegmentMetadataKey"/>
+				<string key="90.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">89</int>
+			<int key="maxID">91</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -519,6 +554,7 @@
 						<string key="randomizeColoursOfConnectLights:">id</string>
 						<string key="segmentChange:">UISegmentedControl</string>
 						<string key="selectOtherBridge:">id</string>
+						<string key="start_light:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="randomizeColoursOfConnectLights:">
@@ -531,6 +567,10 @@
 						</object>
 						<object class="IBActionInfo" key="selectOtherBridge:">
 							<string key="name">selectOtherBridge:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="start_light:">
+							<string key="name">start_light:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>

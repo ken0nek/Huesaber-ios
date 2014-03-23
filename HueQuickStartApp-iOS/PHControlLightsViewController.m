@@ -8,12 +8,14 @@
 
 #import <HueSDK_iOS/HueSDK.h>
 #import "SEManager.h"
+#import <CoreMotion/CoreMotion.h>
 #define MAX_HUE 65535
 
 @interface PHControlLightsViewController()
 {
     NSArray *hueArray;
     NSNumber     *curColor;
+    CMMotionManager *motionManager;
 }
 
 @property (nonatomic,weak) IBOutlet UILabel *bridgeMacLabel;
@@ -53,8 +55,42 @@
     // Red, Blue, Green, Purple
     hueArray = @[[NSNumber numberWithInt:0], [NSNumber numberWithInt:43690], [NSNumber numberWithInt:21845], [NSNumber numberWithInt:54613]];
     curColor = hueArray[0];
+    
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    // You have to declair CMMotionManager *motionManager; somewhere else
+    motionManager = [[CMMotionManager alloc] init];
+    motionManager.accelerometerUpdateInterval = 0.1;
+    
+    NSOperationQueue *currentQueue = [NSOperationQueue currentQueue];
+    
+    [motionManager startAccelerometerUpdatesToQueue:currentQueue
+                                        withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
+                                            CMAcceleration acceleration = accelerometerData.acceleration;
+                                            double accv = acceleration.x*acceleration.x + acceleration.y *acceleration.y + acceleration.z*acceleration.z;
+                                            accv = sqrt(accv);
+                                            if (accv > 2.0) {
+                                                [[SEManager sharedManager] playSound:@"Swing02.wav"];
+                                                [self ColoursOfConnectLights];
+                                            }
+                                            else if (accv > 3.0){
+                                                 [[SEManager sharedManager] playSound:@"LSwall02.WAV"];
+                                                
+                                            }
+                                            NSLog(@"%f",accv);
+                                                                                      NSLog(@"%f, %f, %f", acceleration.x, acceleration.y, acceleration.z);
+                                        }];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [motionManager stopAccelerometerUpdates];
+    [super viewWillDisappear:animated];
+}
 - (BOOL)canBecomeFirstResponder {
     return YES;
 }
@@ -64,8 +100,8 @@
     if (event.type == UIEventTypeMotion && event.subtype == UIEventSubtypeMotionShake)  {
         NSLog(@"Motion began");
        
-        [[SEManager sharedManager] playSound:@"Swing02.wav"];
-         [self ColoursOfConnectLights];
+        //[[SEManager sharedManager] playSound:@"Swing02.wav"];
+        // [self ColoursOfConnectLights];
     }
 }
 
@@ -136,6 +172,35 @@
     }
 }
 
+- (void)black_Lights
+{
+    [self.randomLightsButton setEnabled:NO];
+    
+    PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
+    id<PHBridgeSendAPI> bridgeSendAPI = [[[PHOverallFactory alloc] init] bridgeSendAPI];
+    
+    for (PHLight *light in cache.lights.allValues) {
+        
+        PHLightState *lightState = [[PHLightState alloc] init];
+        
+        [lightState setHue:curColor];
+        [lightState setBrightness:[NSNumber numberWithInt:0]];
+        [lightState setSaturation:[NSNumber numberWithInt:0]];
+        
+        // Send lightstate to light
+        [bridgeSendAPI updateLightStateForId:light.identifier withLighState:lightState completionHandler:^(NSArray *errors) {
+            if (errors != nil) {
+                NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
+                
+                NSLog(@"Response: %@",message);
+            }
+            
+            [self.randomLightsButton setEnabled:YES];
+        }];
+    }
+
+}
+
 - (void)ColoursOfConnectLights
 {
     [self.randomLightsButton setEnabled:NO];
@@ -152,7 +217,7 @@
         int n = random() % [hueArray count];
         
         [lightState setHue:curColor];
-        [lightState setBrightness:[NSNumber numberWithInt:254]];
+        [lightState setBrightness:[NSNumber numberWithInt:180]];
         [lightState setSaturation:[NSNumber numberWithInt:254]];
         
         // Send lightstate to light
@@ -192,6 +257,13 @@
              curColor = hueArray[3];
             break;
     }
+}
+
+- (IBAction)start_light:(id)sender
+{
+    [self black_Lights];
+    [[SEManager sharedManager] playSound:@"SaberOn.wav"];
+    [self ColoursOfConnectLights];
 }
 
 - (IBAction)randomizeColoursOfConnectLights:(id)sender{
